@@ -21,9 +21,7 @@ namespace ClearMembersBot.Service
         {
             if (upd?.Message?.Chat != null && upd.Message.Chat.Type == Telegram.Bot.Types.Enums.ChatType.Supergroup)
             {
-                //var res = await GetAllUsers(upd.ChannelPost.Chat.Title);
                 return true;
-                //await _client.SendTextMessageAsync(upd.Message.Chat.Id, "Добро пожаловать! Напишите /clear для очистки не активных пользователей");
             }
             else if (upd?.Type == Telegram.Bot.Types.Enums.UpdateType.ChannelPost && upd.ChannelPost != null)
             {
@@ -32,12 +30,8 @@ namespace ClearMembersBot.Service
                     var res = await GetAllUsers(upd.ChannelPost.Chat.Title);
                     return res;
                 }
-                var res2 = await GetAllUsers(upd.ChannelPost.Chat.Title);
-                //if(res2 == true)
-                //{
-                //    await _client.SendTextMessageAsync(upd.Message.Chat.Id,
-                //}
-                return res2;
+
+                return false;
             }
             else
             {
@@ -56,9 +50,9 @@ namespace ClearMembersBot.Service
         {
             try
             {
-                using (var client = new WTelegram.Client(28518180, "28778c6f5e9e6f2aa6f4ae4139fe3119"))
+                using (var client = new WTelegram.Client(int.Parse("Your APP - ID"), "Your APP - HASH"))
                 {
-                    await DoLogin("+375336098327", client);
+                    await DoLogin("YOUR TEL.NUMBER", client);
                     var chats = await client.Messages_GetAllChats();
                     var mainchannel = (chats.chats.Where(item => item.Value.Title.Equals(title)).Select(i => i.Value).FirstOrDefault());
 
