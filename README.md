@@ -4,6 +4,8 @@ The project was created to clean up telegram channels and groups - written in C#
 In order to get started, you need to tell the project itself and specify all the important fields in the TelegramBotService class, 
 such as - phone number, AppID, AppHash.
 
+![image](https://github.com/Urryy/ClearMembersTelegramBot/assets/94054268/57d0a6c2-95c9-45c9-8166-4aaed80e36d9)
+
 AppId - It is taken from Telegram when creating your application and Telegram itself will provide you with your code.
 AppHash - It is taken from Telegram when creating your application and Telegram itself will provide you with your code.
 
